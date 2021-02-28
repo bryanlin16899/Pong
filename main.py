@@ -16,7 +16,7 @@ screen.onkey(l_paddle.Down, "Down")
 is_on = True
 while is_on:
     screen.update()
-    r_paddle.paddle_bot_move()
+
 
 
 

@@ -1,10 +1,9 @@
-from turtle import Turtle,Screen
+from turtle import Turtle
 
 class Paddle(Turtle):
 
     def __init__(self, x, y):
         super().__init__()
-        self.screen = Screen()
         self.color("white")
         self.shape("square")
         self.turtlesize(5, 1)
