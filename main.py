@@ -4,13 +4,23 @@ screen = Screen()
 screen.title("Pong")
 screen.setup(width=800, height=600)
 screen.bgcolor("black")
+screen.tracer(0)
 
-paddle_user = Paddle()
-paddle_user.user_position()
-paddle_bot = Paddle()
-paddle_bot.bot_position()
+r_paddle = Paddle(x=350, y=0)
+l_paddle = Paddle(x=-350, y=0)
 
-paddle_bot.paddle_bot_move()
+screen.listen()
+screen.onkey(l_paddle.Up, "Up")
+screen.onkey(l_paddle.Down, "Down")
+
+is_on = True
+while is_on:
+    screen.update()
+    r_paddle.paddle_bot_move()
+
+
+
+
 
 
 

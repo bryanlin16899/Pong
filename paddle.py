@@ -1,24 +1,26 @@
-from turtle import Turtle
+from turtle import Turtle,Screen
 
 class Paddle(Turtle):
 
-    def __init__(self):
+    def __init__(self, x, y):
         super().__init__()
+        self.screen = Screen()
         self.color("white")
         self.shape("square")
         self.turtlesize(5, 1)
         self.penup()
         self.speed("fastest")
-
-    def bot_position(self):
-        self.setposition(350, 0)
-
-    def user_position(self):
-        self.setposition(-350, 0)
+        self.goto(x, y)
 
     def paddle_bot_move(self):
         self.speed(1)
-        is_on = True
-        while is_on:
-            self.goto(350, 250)
-            self.goto(350, -250)
+        self.goto(350, 250)
+        self.goto(350, -250)
+
+    def Up(self):
+        new_y = self.ycor() + 20
+        self.goto(self.xcor(), new_y)
+
+    def Down(self):
+        new_y = self.ycor() - 20
+        self.goto(self.xcor(), new_y)
